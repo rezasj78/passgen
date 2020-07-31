@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Home</h1>
+{% csrf_token %}
+<form method="post" action="{% url 'home' %}">
+{% csrf_token %}
+    <input type="text" name="text">
+    <input type="submit" value="generate"><br>
+    {% if pass %}
+        <p>{{ pass }}</p>
+    {% endif %}
+</form>
+</body>
+</html>
